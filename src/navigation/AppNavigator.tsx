@@ -1,13 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 import LoginScreen from '../screens/LoginScreen';
-import SignupScreen from '../screens/SignupScreen'; // Create this screen later
+import SignupScreen from '../screens/SignupScreen';
 
 const Stack = createStackNavigator();
 
 const AppNavigator: React.FC = () => {
   return (
+    <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
@@ -20,6 +22,7 @@ const AppNavigator: React.FC = () => {
           options={{ title: 'Sign Up' }}
         />
       </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
